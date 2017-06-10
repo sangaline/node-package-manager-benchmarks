@@ -1,1 +1,9 @@
 node_modules
+cache
+
+shrinkwrap.yaml
+npm-shrinkwrap.json
+yarn.lock
+package-lock.json
+
+.tern-port
