@@ -1,0 +1,25 @@
+{
+  "name": "node-package-manager-benchmarks",
+  "version": "1.0.0",
+  "description": "Benchmarks of installation times for npm, yarn, and pnpm.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sangaline/node-package-manager-benchmarks.git"
+  },
+  "keywords": [
+    "npm",
+    "yarn",
+    "pnpm",
+    "benchmarks"
+  ],
+  "author": "Evan Sangaline",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sangaline/node-package-manager-benchmarks/issues"
+  },
+  "homepage": "https://github.com/sangaline/node-package-manager-benchmarks#readme"
+}
