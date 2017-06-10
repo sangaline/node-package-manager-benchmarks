@@ -1,5 +1,5 @@
 const execSync = require('child_process').exec;
-const fs = require('fs');
+const fs = require('fs-extra');
 const path = require('path');
 
 // global settings
@@ -7,7 +7,7 @@ const defaultRepititions = 5;
 const repititions = process.argv.length === 3 ? parseInt(process.argv[2]) : defaultRepititions;
 const cwd = process.cwd();
 const binPrefix = path.join(cwd, 'node_modules', '.bin');
-const cacheDirectory = path.join(process.cwd(), 'cache');
+const cacheDirectory = path.join(cwd, 'cache');
 const packageManagers = ['pnpm'];
 
 function getProjects(root='projects') {
@@ -19,4 +19,20 @@ function getProjects(root='projects') {
       directory: directory,
       name: require(path.join(directory, 'package.json')).description,
     }));
+}
+
+function removeCache() {
+  fs.removeSync(cacheDirectory);
+}
+
+function removeNodeModules(project) {
+  fs.removeSync(path.join(project.directory, 'node_modules'));
+}
+
+function removeShrinkwrap(project) {
+  // really, remove anything *but* node_modules and package.json
+  fs.readdirSync(project.directory)
+    .filter(file => !['node_modules', 'package.json'].includes(file))
+    .map(file => path.join(project.directory, file))
+    .forEach(file => fs.removeSync(file));
 }
