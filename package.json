@@ -21,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/sangaline/node-package-manager-benchmarks/issues"
   },
-  "homepage": "https://github.com/sangaline/node-package-manager-benchmarks#readme"
+  "homepage": "https://github.com/sangaline/node-package-manager-benchmarks#readme",
+  "dependencies": {
+    "npm": "^5.0.3",
+    "pnpm": "^0.69.3",
+    "yarn": "^0.24.5"
+  }
 }
