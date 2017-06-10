@@ -1,0 +1,14 @@
+{
+  "name": "react-native-project",
+  "version": "1.0.0",
+  "description": "React Native Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD",
+  "dependencies": {
+    "react-native": "^0.45.1"
+  }
+}
