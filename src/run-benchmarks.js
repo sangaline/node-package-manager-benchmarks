@@ -1,5 +1,6 @@
 const execSync = require('child_process').exec;
 const fs = require('fs-extra');
+const nunjucks = require('nunjucks');
 const path = require('path');
 
 // global settings
@@ -35,4 +36,9 @@ function removeShrinkwrap(project) {
     .filter(file => !['node_modules', 'package.json'].includes(file))
     .map(file => path.join(project.directory, file))
     .forEach(file => fs.removeSync(file));
+}
+
+function updateReadme(results, template='templates/README.md', readme='README.md') {
+  const content = nunjucks.render(template, { results });
+  fs.writeFileSync(readme, content);
 }
