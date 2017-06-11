@@ -1,0 +1,1357 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Benchmarking Results</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Node Package Manager Benchmarks</h1>
+
+      <p>
+        This is a set of benchmarks in the style of <a href="https://yarnpkg.com/lang/en/compare/">official Yarn benchmarks</a>, but with <a href="https://github.com/pnpm/pnpm">pnpm</a> included.
+        There are also more projects included in this benchmark so it's possible to see some variations in the performance.
+      </p>
+
+      
+        <h2>Angular 2 Project</h2>
+
+        <p>An Angular 2 starter kit featuring Angular (Router, Http, Forms, Services, Tests, E2E, Coverage), Karma, Protractor, Jasmine, Istanbul, TypeScript, and Webpack by AngularClass.<p>
+
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-default">✘ Warm Cache</span>
+              <span class="label label-default">✘ node_modules</span>
+              <span class="label label-default">✘ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (1 minute 40 seconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 100%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (1 minute 26 seconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 86.13139411674662%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (1 minute 8 seconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 68.02439659576837%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-success">✔ Warm Cache</span>
+              <span class="label label-default">✘ node_modules</span>
+              <span class="label label-default">✘ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (6 seconds 200.39999999999964 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 6.163162174143824%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (1 second 260.4000000000001 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.2528303987308682%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (1 second 975.4000000000001 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 1.9635363135932695%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-default">✘ Warm Cache</span>
+              <span class="label label-default">✘ node_modules</span>
+              <span class="label label-success">✔ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (7 seconds 729 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 7.682581840519581%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (1 second 277.4000000000001 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.2697283016017227%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (2 seconds 396.5999999999999 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 2.3822067070758477%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-success">✔ Warm Cache</span>
+              <span class="label label-default">✘ node_modules</span>
+              <span class="label label-success">✔ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (5 seconds 983.1999999999998 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 5.947266615111497%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (1 second 286.20000000000005 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.2784754513231058%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (1 second 824 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 1.8130455786140143%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-default">✘ Warm Cache</span>
+              <span class="label label-success">✔ node_modules</span>
+              <span class="label label-default">✘ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (6 seconds 668.8000000000002 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 6.628749097950185%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (1 minute 3 seconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 63.57150099101231%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (1 minute 2 seconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 61.73579234266562%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-success">✔ Warm Cache</span>
+              <span class="label label-success">✔ node_modules</span>
+              <span class="label label-default">✘ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (6 seconds 649.3999999999996 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 6.609465608791681%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (1 second 375.20000000000005 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.3669409428234607%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (1 second 852.4000000000001 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 1.8412750163512062%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-default">✘ Warm Cache</span>
+              <span class="label label-success">✔ node_modules</span>
+              <span class="label label-success">✔ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (6 seconds 654.6000000000004 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 6.614634379081589%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (1 second 338.4000000000001 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.3303619530794937%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (3 seconds 658.8000000000002 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 3.6368262955224533%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-success">✔ Warm Cache</span>
+              <span class="label label-success">✔ node_modules</span>
+              <span class="label label-success">✔ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (6 seconds 214.80000000000018 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 6.177475691869724%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (1 second 437.20000000000005 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.4285685885877528%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (1 second 809.4000000000001 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 1.7985332620308099%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+      
+        <h2>React Native Project</h2>
+
+        <p>A React Native project scaffolded using `react-native-cli`.<p>
+
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-default">✘ Warm Cache</span>
+              <span class="label label-default">✘ node_modules</span>
+              <span class="label label-default">✘ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (1 minute 11 seconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 100%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (1 minute 7 seconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 94.77205931842146%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (44 seconds 842.1999999999971 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 62.87747066609831%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-success">✔ Warm Cache</span>
+              <span class="label label-default">✘ node_modules</span>
+              <span class="label label-default">✘ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (3 seconds 800.4000000000001 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 5.328898660624144%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (987.2 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.3842460682475939%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (1 second 355.4000000000001 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 1.900533955533619%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-default">✘ Warm Cache</span>
+              <span class="label label-default">✘ node_modules</span>
+              <span class="label label-success">✔ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (4 seconds 998.1999999999998 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 7.0084468175801495%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (988.6 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.3862091400623695%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (1 second 914.4000000000001 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 2.6843604872905122%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-success">✔ Warm Cache</span>
+              <span class="label label-default">✘ node_modules</span>
+              <span class="label label-success">✔ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (3 seconds 774.5999999999999 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 5.292722051466134%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (976 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.3685414937293876%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (1 second 306.5999999999999 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 1.8321068808471492%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-default">✘ Warm Cache</span>
+              <span class="label label-success">✔ node_modules</span>
+              <span class="label label-default">✘ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (4 seconds 170.80000000000018 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 5.848271375047674%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (55 seconds 24.80000000000291 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 77.15545285262378%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (39 seconds 434.1999999999971 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 55.29440468445022%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-success">✔ Warm Cache</span>
+              <span class="label label-success">✔ node_modules</span>
+              <span class="label label-default">✘ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (3 seconds 868.8000000000002 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 5.4248087407174745%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (990.4 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.3887330895385097%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (1 second 311.5999999999999 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 1.839117851614206%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-default">✘ Warm Cache</span>
+              <span class="label label-success">✔ node_modules</span>
+              <span class="label label-success">✔ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (3 seconds 822.1999999999998 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 5.35946649316851%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (992.2 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.3912570390146501%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (1 second 714.4000000000001 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 2.4039216566082606%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-success">✔ Warm Cache</span>
+              <span class="label label-success">✔ node_modules</span>
+              <span class="label label-success">✔ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (4 seconds 60.40000000000009 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 5.693469140511072%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (988.2 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.3856482624010051%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (1 second 296.20000000000005 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 1.8175240616516726%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+      
+        <h2>React Project</h2>
+
+        <p>A React Project scaffolded using `create-react-app` and then ejected.<p>
+
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-default">✘ Warm Cache</span>
+              <span class="label label-default">✘ node_modules</span>
+              <span class="label label-default">✘ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (1 minute 11 seconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 100%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (59 seconds 389.40000000000146 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 83.04723070555201%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (48 seconds 668 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 68.05494960342763%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-success">✔ Warm Cache</span>
+              <span class="label label-default">✘ node_modules</span>
+              <span class="label label-default">✘ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (5 seconds 850.3999999999996 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 8.180913067311026%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (1 second 291 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.8052712241724558%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (1 second 672.2 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 2.338322649931201%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-default">✘ Warm Cache</span>
+              <span class="label label-default">✘ node_modules</span>
+              <span class="label label-success">✔ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (7 seconds 558.1999999999998 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 10.569017015135751%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (1 second 292.20000000000005 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.8069492454497655%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (2 seconds 485.1999999999998 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 3.4751820653085876%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-success">✔ Warm Cache</span>
+              <span class="label label-default">✘ node_modules</span>
+              <span class="label label-success">✔ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (5 seconds 812.1999999999998 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 8.127496056649997%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (1 second 278 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.787092660334933%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (1 second 582.2 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 2.2124710541329664%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-default">✘ Warm Cache</span>
+              <span class="label label-success">✔ node_modules</span>
+              <span class="label label-default">✘ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (6 seconds 474.39999999999964 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 9.053484131512121%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (47 seconds 292 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 66.13081853877907%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (41 seconds 939.8000000000029 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 58.6465639717645%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-success">✔ Warm Cache</span>
+              <span class="label label-success">✔ node_modules</span>
+              <span class="label label-default">✘ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (5 seconds 850.8000000000002 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 8.181472407736797%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (1 second 239.79999999999995 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.7336756496739045%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (1 second 610.2 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 2.2516248839368616%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-default">✘ Warm Cache</span>
+              <span class="label label-success">✔ node_modules</span>
+              <span class="label label-success">✔ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (6 seconds 162 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 8.616639258985803%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (1 second 287.4000000000001 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.8002371603405265%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (2 seconds 855.5999999999999 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 3.993131299571545%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-success">✔ Warm Cache</span>
+              <span class="label label-success">✔ node_modules</span>
+              <span class="label label-success">✔ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (5 seconds 804.8000000000002 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 8.117148258773254%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (1 second 245.20000000000005 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.7412267454217984%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (1 second 656.8 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 2.3167880435390584%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+      
+        <h2>Vue Project</h2>
+
+        <p>The vuexpresso boilerplate using VueX, Vue-Router, Vue-Apollo, webpack, GraphQL, Apollo-client, Express and Mongo.<p>
+
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-default">✘ Warm Cache</span>
+              <span class="label label-default">✘ node_modules</span>
+              <span class="label label-default">✘ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (1 minute 10 seconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 100%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (1 minute 5 seconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 93.9756696001394%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (47 seconds 623.4000000000015 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 68.01457881672795%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-success">✔ Warm Cache</span>
+              <span class="label label-default">✘ node_modules</span>
+              <span class="label label-default">✘ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (6 seconds 0.6000000000003638 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 8.569910624769708%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (1 second 183 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.68953175834126%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (1 second 787.4000000000001 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 2.552721103008595%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-default">✘ Warm Cache</span>
+              <span class="label label-default">✘ node_modules</span>
+              <span class="label label-success">✔ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (8 seconds 163.19999999999982 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 11.658483220364642%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (1 second 250.79999999999995 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.7863620653704546%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (2 seconds 642 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 3.773239987774817%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-success">✔ Warm Cache</span>
+              <span class="label label-default">✘ node_modules</span>
+              <span class="label label-success">✔ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (6 seconds 232.60000000000036 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 8.901247368586422%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (1 second 234.4000000000001 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.762939985204101%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (1 second 734 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 2.476456524905955%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-default">✘ Warm Cache</span>
+              <span class="label label-success">✔ node_modules</span>
+              <span class="label label-default">✘ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (6 seconds 719.3999999999996 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 9.59648326035356%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (58 seconds 163.40000000000146 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 83.06754985047002%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (41 seconds 534.1999999999971 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 59.31813183203512%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-success">✔ Warm Cache</span>
+              <span class="label label-success">✔ node_modules</span>
+              <span class="label label-default">✘ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (5 seconds 962.8000000000002 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 8.515925586337502%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (1 second 377.4000000000001 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.9671690988497474%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (1 second 782.8 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 2.5461514951570567%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-default">✘ Warm Cache</span>
+              <span class="label label-success">✔ node_modules</span>
+              <span class="label label-success">✔ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (6 seconds 8.800000000000182 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 8.581621664852884%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (1 second 324 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.8909045207471074%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (3 seconds 482.5999999999999 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 4.973764413862444%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="label label-success">✔ Warm Cache</span>
+              <span class="label label-success">✔ node_modules</span>
+              <span class="label label-success">✔ Lockfile/Shrinkwrap</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>npm</b> (6 seconds 51.600000000000364 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 8.642747581384588%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>yarn</b> (1 second 302 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 1.8594846571093155%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>pnpm</b> (1 second 694.5999999999999 milliseconds)</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 2.4201864054819096%"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+      
+    </div>
+  </body>
+</html>
