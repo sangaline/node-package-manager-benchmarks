@@ -35,7 +35,7 @@
               {% for result in benchmark.results -%}
               <div class="row">
                 <div class="col-md-3">
-                  <span style="float: left; margin-right: 1em"><b>{{ result.packageManager }}</b> ({{ result.formattedTime }})</span>
+                  <span><b>{{ result.packageManager }}</b> ({{ result.formattedTime }})</span>
                 </div>
                 <div class="col-md-9">
                   <div class="progress">
