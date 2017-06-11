@@ -3,10 +3,11 @@ const filesize = require('filesize');
 const fs = require('fs-extra');
 const millisec = require('millisec');
 const nunjucks = require('nunjucks');
+const pace = require('pace');
 const path = require('path');
 
 // global settings
-const defaultRepititions = 1;
+const defaultRepititions = 5;
 const repititions = process.argv.length === 3 ? parseInt(process.argv[2]) : defaultRepititions;
 const baseDirectory = path.join(__dirname, '..');
 const binPrefix = path.join(baseDirectory, 'node_modules', '.bin');
@@ -27,6 +28,7 @@ function computeProjectBenchmarks() {
     const timeTotals = {};
     const sizeTotals = {};
     const values = [false, true];
+    const progressBar = pace(8*packageManagers.length*repititions);
     packageManagers.forEach(packageManager => {
       for (let i = 0; i < repititions; i++) {
         removeNodeModules(project);
@@ -42,8 +44,7 @@ function computeProjectBenchmarks() {
               }
               timeTotals[key] += installDependencies(project, packageManager);
               sizeTotals[key] += getNodeModulesSize(project);
-              if (i === 0) console.log(timeTotals[key]);
-              console.log(key);
+              progressBar.op();
             });
           });
         });
@@ -149,7 +150,7 @@ function getNodeModulesSize(project) {
 }
 
 function installDependencies(project, packageManager) {
-  const options = { cwd: project.directory };
+  const options = { cwd: project.directory, stdio: 'ignore' };
   const start = new Date();
   execSync(`${packageManager} install --ignore-scripts`, options);
   const elapsed = (new Date()) - start;

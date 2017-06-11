@@ -13,8 +13,7 @@
   "author": "Patrick Stapleton <patrick@angularclass.com>",
   "homepage": "https://github.com/AngularClass/angular-starter",
   "license": "MIT",
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
     "@angular/animations": "~4.1.2",
     "@angular/common": "~4.1.2",
