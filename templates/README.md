@@ -19,6 +19,8 @@ Each of these benchmarks were run {{ repititions }} times and the results averag
 {% for project in projectBenchmarks %}
 ### {{ project.name }}
 
+{{ project.description }}
+
 | {{ project.headings | join(' | ') }} |
 |{% for heading in project.headings %} ---------- |{% endfor %}
 {% for row in project.table -%}

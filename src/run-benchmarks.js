@@ -61,6 +61,7 @@ function computeProjectBenchmarks() {
 
     return {
       name: project.name,
+      description: project.description,
       headings: ['Package Manager', 'Node Modules', 'Shrinkwrap', 'Cache', 'Time (s)'],
       table: table,
     };
@@ -72,10 +73,14 @@ function getProjects(root='projects') {
   return fs.readdirSync(root)
     .map(file => path.join(root, file))
     .filter(file => fs.lstatSync(file).isDirectory())
-    .map(directory => ({
-      directory: directory,
-      name: require(path.join(directory, 'package.json')).description,
-    }));
+    .map(directory => {
+      const packageJson = require(path.join(directory, 'package.json'));
+      return {
+        directory: directory,
+        name: packageJson.name,
+        description: packageJson.description,
+      };
+    });
 }
 
 function removeCache() {

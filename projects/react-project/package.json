@@ -1,6 +1,6 @@
 {
-  "name": "react-project",
-  "description": "React Project",
+  "name": "React Project",
+  "description": "A React Project scaffolded using `create-react-app` and then ejected.",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
