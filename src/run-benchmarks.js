@@ -111,7 +111,8 @@ function getProjects(root='projects') {
         title: packageJson.title || packageJson.name,
         description: packageJson.description,
       };
-    });
+    })
+    .sort();
 }
 
 function removeCache() {
