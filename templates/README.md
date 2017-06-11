@@ -1,6 +1,8 @@
 # Node Package Manager Benchmarks
 
-This repository runs benchmarks of [npm](https://github.com/npm/npm), [pnpm](https://github.com/pnpm/pnpm), and [yarn](https://github.com/yarnpkg/yarn).
+This repository runs benchmarks of package installation using the [npm](https://github.com/npm/npm), [pnpm](https://github.com/pnpm/pnpm), and [yarn](https://github.com/yarnpkg/yarn) package managers.
+The benchmarks are run for each node project in the `projects/` subdirectory and the results are rendered into this README file automatically.
+If you would like to benchmark a different set of dependencies, you can simply add a new subdirectory with a corresponding `package.json` file.
 
 ## Results
 
