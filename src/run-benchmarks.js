@@ -6,9 +6,9 @@ const path = require('path');
 // global settings
 const defaultRepititions = 1;
 const repititions = process.argv.length === 3 ? parseInt(process.argv[2]) : defaultRepititions;
-const cwd = process.cwd();
-const binPrefix = path.join(cwd, 'node_modules', '.bin');
-const cacheDirectory = path.join(cwd, 'cache');
+const baseDirectory = path.join('..', __dirname);
+const binPrefix = path.join(baseDirectory, 'node_modules', '.bin');
+const cacheDirectory = path.join(baseDirectory, 'cache');
 const packageManagers = ['npm', 'yarn', 'pnpm'];
 
 // the main program execution
@@ -69,7 +69,7 @@ function computeProjectBenchmarks() {
 }
 
 function getProjects(root='projects') {
-  root = path.resolve(cwd, root);
+  root = path.resolve(baseDirectory, root);
   return fs.readdirSync(root)
     .map(file => path.join(root, file))
     .filter(file => fs.lstatSync(file).isDirectory())
