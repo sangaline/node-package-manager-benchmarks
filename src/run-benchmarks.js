@@ -22,7 +22,8 @@ function main() {
 function computeProjectBenchmarks() {
   return getProjects().map(project => {
     // tally the sums of the timings
-    const totals = {};
+    const timeTotals = {};
+    const sizeTotals = {};
     const values = [false, true];
     packageManagers.forEach(packageManager => {
       for (let i = 0; i < repititions; i++) {
@@ -33,9 +34,13 @@ function computeProjectBenchmarks() {
             removeCache();
             values.forEach(cache => {
               const key = [packageManager, nodeModules, shrinkwrap, cache];
-              if (i === 0) totals[key] = 0;
-              totals[key] += installDependencies(project, packageManager);
-              if (i === 0) console.log(totals[key]);
+              if (i === 0) {
+                timeTotals[key] = 0;
+                sizeTotals[key] = 0;
+              }
+              timeTotals[key] += installDependencies(project, packageManager);
+              sizeTotals[key] += getNodeModulesSize(project);
+              if (i === 0) console.log(timeTotals[key]);
               console.log(key);
             });
           });
@@ -53,7 +58,7 @@ function computeProjectBenchmarks() {
         values.forEach(cache => {
           packageManagers.forEach(packageManager => {
             const key = [packageManager, nodeModules, shrinkwrap, cache];
-            table.push(key.concat([totals[key]/(repititions*1000)]));
+            table.push(key.concat([timeTotals[key]/(repititions*1000), sizeTotals[key]/(1024*1024)]));
           });
         });
       });
@@ -62,7 +67,7 @@ function computeProjectBenchmarks() {
     return {
       name: project.name,
       description: project.description,
-      headings: ['Package Manager', 'Node Modules', 'Shrinkwrap', 'Cache', 'Time (s)'],
+      headings: ['Package Manager', 'Node Modules', 'Shrinkwrap', 'Cache', 'Time (s)', 'Size (MB)'],
       table: table,
     };
   });
@@ -97,6 +102,23 @@ function removeShrinkwrap(project) {
     .filter(file => !['node_modules', 'package.json'].includes(file))
     .map(file => path.join(project.directory, file))
     .forEach(file => fs.removeSync(file));
+}
+
+function getFileSize(fileOrDirectory) {
+  if (!fs.existsSync(fileOrDirectory)) return 0;
+  const stats = fs.lstatSync(fileOrDirectory);
+  if (!stats.isDirectory()) {
+    return stats.size;
+  }
+
+  return fs.readdirSync(fileOrDirectory)
+    .map(file => path.join(fileOrDirectory, file))
+    .map(getFileSize)
+    .reduce((accumulated, current) => accumulated + current, 0);
+}
+
+function getNodeModulesSize(project) {
+  return getFileSize(path.join(project.directory, 'node_modules'));
 }
 
 function installDependencies(project, packageManager) {
