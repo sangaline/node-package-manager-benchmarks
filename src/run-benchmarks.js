@@ -167,7 +167,7 @@ function formatTime(milliseconds) {
     return ms.format('MM SS');
   }
   const prefix = ms.getSeconds() >= 1 ? ms.format('SS ') : '';
-  return prefix + (milliseconds % 1000) + ' milliseconds';
+  return prefix + Math.round(milliseconds % 1000) + ' milliseconds';
 }
 
 function updateTemplates(context, templateDirectory='templates', outputDirectory='.', exceptions=['common.nj']) {
