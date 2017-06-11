@@ -6,7 +6,7 @@ const path = require('path');
 // global settings
 const defaultRepititions = 1;
 const repititions = process.argv.length === 3 ? parseInt(process.argv[2]) : defaultRepititions;
-const baseDirectory = path.join('..', __dirname);
+const baseDirectory = path.join(__dirname, '..');
 const binPrefix = path.join(baseDirectory, 'node_modules', '.bin');
 const cacheDirectory = path.join(baseDirectory, 'cache');
 const packageManagers = ['npm', 'yarn', 'pnpm'];
