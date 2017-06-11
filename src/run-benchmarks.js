@@ -97,7 +97,7 @@ function removeShrinkwrap(project) {
 function installDependencies(project, packageManager) {
   const options = { cwd: project.directory };
   const start = new Date();
-  execSync(`${packageManager} install`, options);
+  execSync(`${packageManager} install --ignore-scripts`, options);
   const elapsed = (new Date()) - start;
   // only required for npm
   if (packageManager === 'npm') {
