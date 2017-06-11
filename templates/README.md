@@ -6,7 +6,7 @@ This repository runs benchmarks of [npm](https://github.com/npm/npm), [pnpm](htt
 
 Each of these benchmarks were run {{ repititions }} times and the results averaged.
 
-{% macro field(item) -%}
+{% macro check(item) -%}
     {% if item === true -%}
         ✔
     {%- elif item === false -%}
@@ -21,9 +21,13 @@ Each of these benchmarks were run {{ repititions }} times and the results averag
 
 {{ project.description }}
 
-| {{ project.headings | join(' | ') }} |
-|{% for heading in project.headings %} ---------- |{% endfor %}
-{% for row in project.table -%}
-    |{% for item in row %} {{ field(item) }} |{% endfor %}
+{%- for benchmark in project.benchmarks %}
+#### {{ check(benchmark.config.cache) }} Warm Cache -- {{ check(benchmark.config.nodeModules) }} `node_modules` -- {{ check(benchmark.config.shrinkwrap) }} Lockfile/Shrinkwrap
+
+| Package Manager | Installation Time | `node_modules` size |
+| --------------- | ----------------- | --------------------|
+{% for result in benchmark.results -%}
+| {{ result.packageManager }} | {{ result.formattedTime }} | {{ result.formattedSize }} |
+{% endfor %}
 {% endfor %}
 {% endfor %}

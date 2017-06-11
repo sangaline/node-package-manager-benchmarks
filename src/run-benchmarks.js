@@ -1,5 +1,7 @@
 const execSync = require('child_process').execSync;
+const filesize = require('filesize');
 const fs = require('fs-extra');
+const millisec = require('millisec');
 const nunjucks = require('nunjucks');
 const path = require('path');
 
@@ -51,14 +53,37 @@ function computeProjectBenchmarks() {
     removeShrinkwrap(project);
     removeCache();
 
-    // reorder the results to be better for the table
-    const table = []
+    // format the results to be more easily parsed by the templates
+    const benchmarks = [];
+    let maximumTime = 0;
+    let maximumSize = 0;
     values.forEach(nodeModules => {
       values.forEach(shrinkwrap => {
         values.forEach(cache => {
+          const results = [];
           packageManagers.forEach(packageManager => {
             const key = [packageManager, nodeModules, shrinkwrap, cache];
-            table.push(key.concat([timeTotals[key]/(repititions*1000), sizeTotals[key]/(1024*1024)]));
+            const time = timeTotals[key]/repititions;
+            const size = sizeTotals[key]/repititions;
+            maximumTime = time > maximumTime ? time : maximumTime;
+            maximumSize = size > maximumSize ? size : maximumSize;
+
+            results.push({
+              packageManager,
+              time,
+              size,
+              formattedTime: formatTime(time),
+              formattedSize: filesize(size),
+            });
+          });
+
+          benchmarks.push({
+            config: {
+              nodeModules,
+              shrinkwrap,
+              cache,
+            },
+            results,
           });
         });
       });
@@ -67,8 +92,9 @@ function computeProjectBenchmarks() {
     return {
       name: project.name,
       description: project.description,
-      headings: ['Package Manager', 'Node Modules', 'Shrinkwrap', 'Cache', 'Time (s)', 'Size (MB)'],
-      table: table,
+      benchmarks,
+      maximumTime,
+      maximumSize,
     };
   });
 }
@@ -131,6 +157,15 @@ function installDependencies(project, packageManager) {
     execSync(`${packageManager} shrinkwrap`);
   }
   return elapsed;
+}
+
+function formatTime(milliseconds) {
+  const ms = millisec(milliseconds);
+  if (ms.getMinutes() >= 1) {
+    return ms.format('MM SS');
+  }
+  const prefix = ms.getSeconds() >= 1 ? ms.format('SS ') : '';
+  return prefix + (milliseconds % 1000) + ' milliseconds';
 }
 
 function updateReadme(context, template='templates/README.md', readme='README.md') {

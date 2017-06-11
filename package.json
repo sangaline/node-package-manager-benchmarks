@@ -23,7 +23,9 @@
   },
   "homepage": "https://github.com/sangaline/node-package-manager-benchmarks#readme",
   "dependencies": {
+    "filesize": "^3.5.10",
     "fs-extra": "^3.0.1",
+    "millisec": "^0.2.0",
     "npm": "^5.0.3",
     "nunjucks": "^3.0.1",
     "pnpm": "^0.69.3",
