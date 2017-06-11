@@ -1,6 +1,7 @@
 {
-  "name": "React Native Project",
+  "name": "react-native-project",
   "version": "1.0.0",
+  "title": "React Native Project",
   "description": "A React Native project scaffolded using `react-native-cli`.",
   "main": "index.js",
   "scripts": {
