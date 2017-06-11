@@ -1,0 +1,53 @@
+{% from 'common.nj' import check -%}
+{% macro configSpan(text, value) -%}
+    <span class="label label-{% if value %}success{% else %}default{% endif %}">{{ check(value) }} {{ text }}</span>
+{%- endmacro %}
+{%- set colorMap = { npm: 'danger', yarn: 'info', pnpm: 'warning' } %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Benchmarking Results</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Node Package Manager Benchmarks</h1>
+
+      <p>
+        This is a set of benchmarks in the style of <a href="https://yarnpkg.com/lang/en/compare/">official Yarn benchmarks</a>, but with <a href="https://github.com/pnpm/pnpm">pnpm</a> included.
+        There are also more projects included in this benchmark so it's possible to see some variations in the performance.
+      </p>
+
+      {% for project in projectBenchmarks %}
+        <h2>{{ project.title }}</h2>
+
+        <p>{{ project.description }}<p>
+
+        {% for benchmark in project.benchmarks %}
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              {{ configSpan('Warm Cache', benchmark.config.cache) }}
+              {{ configSpan('node_modules', benchmark.config.nodeModules) }}
+              {{ configSpan('Lockfile/Shrinkwrap', benchmark.config.shrinkwrap) }}
+            </div>
+            <div class="panel-body">
+              {% for result in benchmark.results -%}
+              <div class="row">
+                <div class="col-md-3">
+                  <span style="float: left; margin-right: 1em"><b>{{ result.packageManager }}</b> ({{ result.formattedTime }})</span>
+                </div>
+                <div class="col-md-9">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-{{ colorMap[result.packageManager] }}" role="progressbar" style="width: {{ result.time*100 / project.maximumTime }}%"></div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </body>
+</html>
