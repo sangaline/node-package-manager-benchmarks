@@ -18,7 +18,7 @@ main();
 
 function main() {
   const projectBenchmarks = computeProjectBenchmarks();
-  updateReadme({ repititions, projectBenchmarks });
+  updateTemplates({ repititions, projectBenchmarks });
 }
 
 function computeProjectBenchmarks() {
@@ -168,7 +168,14 @@ function formatTime(milliseconds) {
   return prefix + (milliseconds % 1000) + ' milliseconds';
 }
 
-function updateReadme(context, template='templates/README.md', readme='README.md') {
-  const content = nunjucks.render(template, context);
-  fs.writeFileSync(readme, content);
+function updateTemplates(context, templateDirectory='templates', outputDirectory='.', exceptions=['common.nj']) {
+  nunjucks.configure(path.resolve(baseDirectory, templateDirectory));
+  fs.readdirSync(path.resolve(baseDirectory, templateDirectory))
+    .filter(file => !exceptions.includes(file))
+    .forEach(templateFile => {
+      const content = nunjucks.render(templateFile, context);
+      const outputFile = templateFile.endsWith('.nj') ? templateFile.slice(0, -3) : templateFile;
+      const fullOutputFile = path.resolve(baseDirectory, outputDirectory, outputFile);
+      fs.writeFileSync(fullOutputFile, content);
+    });
 }

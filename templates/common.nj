@@ -1,0 +1,9 @@
+{% macro check(item) -%}
+    {% if item === true -%}
+        ✔
+    {%- elif item === false -%}
+        ✘
+    {%- else -%}
+        {{ item }}
+    {%- endif %}
+{%- endmacro %}

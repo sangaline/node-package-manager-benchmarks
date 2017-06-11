@@ -1,3 +1,4 @@
+{% from 'common.nj' import check -%}
 # Node Package Manager Benchmarks
 
 This repository runs benchmarks of package installation using the [npm](https://github.com/npm/npm), [pnpm](https://github.com/pnpm/pnpm), and [yarn](https://github.com/yarnpkg/yarn) package managers.
@@ -8,22 +9,12 @@ If you would like to benchmark a different set of dependencies, you can simply a
 
 Each of these benchmarks were run {{ repititions }} times and the results averaged.
 
-{% macro check(item) -%}
-    {% if item === true -%}
-        ✔
-    {%- elif item === false -%}
-        ✘
-    {%- else -%}
-        {{ item }}
-    {%- endif %}
-{%- endmacro %}
-
 {% for project in projectBenchmarks %}
 ### {{ project.title }}
 
 {{ project.description }}
 
-{%- for benchmark in project.benchmarks %}
+{% for benchmark in project.benchmarks %}
 #### {{ check(benchmark.config.cache) }} Warm Cache -- {{ check(benchmark.config.nodeModules) }} `node_modules` -- {{ check(benchmark.config.shrinkwrap) }} Lockfile/Shrinkwrap
 
 | Package Manager | Installation Time | `node_modules` size |
@@ -31,5 +22,5 @@ Each of these benchmarks were run {{ repititions }} times and the results averag
 {% for result in benchmark.results -%}
 | {{ result.packageManager }} | {{ result.formattedTime }} | {{ result.formattedSize }} |
 {% endfor %}
-{% endfor %}
+{%- endfor %}
 {% endfor %}
