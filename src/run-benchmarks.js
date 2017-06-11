@@ -90,7 +90,7 @@ function computeProjectBenchmarks() {
     });
 
     return {
-      name: project.name,
+      title: project.title,
       description: project.description,
       benchmarks,
       maximumTime,
@@ -108,7 +108,7 @@ function getProjects(root='projects') {
       const packageJson = require(path.join(directory, 'package.json'));
       return {
         directory: directory,
-        name: packageJson.name,
+        title: packageJson.title || packageJson.name,
         description: packageJson.description,
       };
     });

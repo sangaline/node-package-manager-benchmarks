@@ -17,7 +17,7 @@ Each of these benchmarks were run {{ repititions }} times and the results averag
 {%- endmacro %}
 
 {% for project in projectBenchmarks %}
-### {{ project.name }}
+### {{ project.title }}
 
 {{ project.description }}
 
