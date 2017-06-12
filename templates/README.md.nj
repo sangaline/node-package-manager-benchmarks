@@ -1,7 +1,9 @@
 {% from 'common.nj' import check -%}
 # Node Package Manager Benchmarks
 
-This repository runs benchmarks of package installation using the [npm](https://github.com/npm/npm), [pnpm](https://github.com/pnpm/pnpm), and [yarn](https://github.com/yarnpkg/yarn) package managers.
+*This repository is a companion to the article [What I still don't use Yarn](https://intoli.com/blog/node-package-manager-benchmarks) on [the Intoli Website](https://intoli.com).*
+
+This project runs benchmarks of package installation using the [npm](https://github.com/npm/npm), [pnpm](https://github.com/pnpm/pnpm), and [yarn](https://github.com/yarnpkg/yarn) package managers.
 The benchmarks are run for each node project in the `projects/` subdirectory and the results are rendered into this README file automatically.
 Additionally, a prettier HTML version of the results are constructed in `results.html` and can be viewed directly [at this link](https://cdn.rawgit.com/sangaline/node-package-manager-benchmarks/master/results.html).
 That page is modeled after [the yarn comparison page](https://yarnpkg.com/lang/en/compare/) and is designed to extend those results to include pnpm and a few extra project scaffolds (*e.g.* React, Angular, Vue).
@@ -13,9 +15,10 @@ node run benchmarks
 ```
 
 after installing the appropriate dependencies within `npm install` or equivalent.
-The script will display a nice progressbar that gives you an indication of how long it will take to complete (tens of minutes).
+The script will display a nice progress bar that gives you an indication of how long it will take to complete (tens of minutes).
 
 If you would like to benchmark a different set of dependencies, you can simply add a new subdirectory with a corresponding `package.json` file.
+Similarly, any `.nj` file added to the `templates/` directory will be rendered as a [Nunjucks template](https://mozilla.github.io/nunjucks/) (that's how this README was generated).
 
 ## Results
 
