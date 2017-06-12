@@ -4,7 +4,7 @@
 
 This project runs benchmarks of package installation using the [npm](https://github.com/npm/npm), [pnpm](https://github.com/pnpm/pnpm), and [yarn](https://github.com/yarnpkg/yarn) package managers.
 The benchmarks are run for each node project in the `projects/` subdirectory and the results are rendered into this README file automatically.
-Additionally, a prettier HTML version of the results are constructed in `results.html` and can be viewed directly [at this link](https://cdn.rawgit.com/sangaline/node-package-manager-benchmarks/master/results.html).
+Additionally, a prettier HTML version of the results are constructed in `results.html` and can be viewed directly [at this link](https://cdn.rawgit.com/sangaline/node-package-manager-benchmarks/6c6813e48194604b071e2119c25a4c76e287452d/results.html).
 That page is modeled after [the yarn comparison page](https://yarnpkg.com/lang/en/compare/) and is designed to extend those results to include pnpm and a few extra project scaffolds (*e.g.* React, Angular, Vue).
 
 To run the benchmarks, you can execute
